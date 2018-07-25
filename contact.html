@@ -13,7 +13,7 @@
     <meta property="og:image"			content="http://www.theworthhotel.com/images/homepage/section1/slide_1.png">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-    <title>The Worth Hotel | Confirmation</title>
+    <title>The Worth Hotel | Contact</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -50,8 +50,8 @@
         </ul>
           <ul class="navbar-nav mr-auto">
             <li class="nav-item mobile-nav text-center">
-              <a href="th/confirmation.html"><img class="flag" src="images/header/flag-thai.png" alt="Thai Flag"></a>
-              <a class="nav-link flag-thai-text" href="th/confirmation.html">ไทย</a>
+              <a href="th/contact.php"><img class="flag" src="images/header/flag-thai.png" alt="Thai Flag"></a>
+              <a class="nav-link flag-thai-text" href="th/contact.php">ไทย</a>
             </li>
             <li class="nav-item mobile-nav text-center">
               <a href="#"><img class="flag" src="images/header/flag-eng.png" alt="American Flag"></a>
@@ -73,19 +73,70 @@
     
     <div class="jumbotron contact-header">
       <div class="container page-header">
-        <h3 class="display-3">THANK YOU!</h3>
+        <h1 class="display-3">CONTACT</h1>
       </div>
     </div>
+
     
     <!-- Section 2
     ================================================== -->
-    <!-- Confirmation Message-->
-    
-    <div class="container section-2">
-      <blockquote class="blockquote text-center" style="padding-top: 10%;">
-        <h3 class="mb-0 eng-h1">Thank you for contacting us. Please check your email for confirmation. We will contact you soon.</h3>
-      </blockquote>
-      <div class="container text-center" style="padding: 10%;"><p><a class="btn btn-outline-dark" href="index.html" role="button">BACK TO HOMEPAGE</a></p></div>
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+    <div class="container marketing">
+
+      <div class="row featurette">
+        <div class="col-lg-5 order-lg-1">
+          <div class="container contact-info">
+            <h3 class="font-weight-bold contact-title">Location</h3>
+            <p class="lead"><address>The Worth Hotel<br>641 Post St.<br>San Francisco, CA 94109</address></p>
+          </div>
+          <div class="container contact-info">
+            <h3 class="font-weight-bold contact-title">Contact Information</h3>
+            <p>Phone: <a href="tel:+14157753940" style="color: #000000;"> (415) 775 - 3940</a> <br>Email: <a href="mailto:info@theworthhotel.com" style="color: #000000;"> info@theworthhotel.com</a></p>
+          </div>
+        </div>
+        <div class="col-lg-7 order-lg-2">
+          <iframe id="google-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.100908322129!2d-122.41455554935067!3d37.787674879657814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808e1bf46fcd%3A0x4ef20eaa7fea53a2!2sWorth+Hotel!5e0!3m2!1sen!2sus!4v1507090474698" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+      </div>
+     
+     <!-- Contact Form -->
+      
+      <form class="container" id="needs-validation" novalidate method="post" action="contact.php" role="form">
+        <div class="form-row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="text" class="form-control" id="firstname" name="firstName" placeholder="FIRST NAME" required>
+                <div class="invalid-feedback">Please provide First Name.</div>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" id="lastname" name="lastName" placeholder="LAST NAME" required>
+                <div class="invalid-feedback">Please provide Last Name.</div>
+              </div>  
+              <div class="form-group">
+                <input type="email" class="form-control" id="email" name="email" placeholder="EMAIL" required>
+                <div class="invalid-feedback">Please provide valid Email.</div>
+              </div>
+              <div class="form-group">
+                <select class="form-control" name="subject" id="contact-about" required>
+                  <option value="" selected disabled style="color: #8E949C;">CONTACTING ABOUT</option> 
+                  <option>Renting</option>
+                  <option>General Inquiry</option>
+                </select>
+                <div class="invalid-feedback">Please select what you are contacting about.</div>
+              </div>    
+            </div>
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <textarea class="form-control message-box" id="message" rows="9" name="message" placeholder="MESSAGE" required></textarea>
+              <div class="invalid-feedback">Please tell us more information</div>
+            </div>
+            <div class="form-group"><button type="submit" class="btn btn-secondary" style="float: right;">GET IN TOUCH</button></button></div>
+          </div>
+        </div>
+      </form><!-- Contact Form -->
+
+      <!-- /END Section 2-->
     </div>
    
     <!-- FOOTER -->
@@ -116,7 +167,6 @@
       </div>
     </footer>
 
-
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -128,6 +178,22 @@
     <script src="js/vendor/holder.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+	// Example starter JavaScript for disabling form submissions if there are invalid fields
+	(function() {
+	  "use strict";
+	  window.addEventListener("load", function() {
+		var form = document.getElementById("needs-validation");
+		form.addEventListener("submit", function(event) {
+		  if (form.checkValidity() == false) {
+			event.preventDefault();
+			event.stopPropagation();
+		  }
+		  form.classList.add("was-validated");
+		}, false);
+	  }, false);
+	}());
+	</script>
   </body>
 </html>
 
