@@ -103,15 +103,15 @@
      
      <!-- Contact Form -->
       
-      <form class="container" id="needs-validation" novalidate method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" role="form">
+      <form class="container" id="needs-validation" novalidate method="post" action="../contact.php" role="form">
         <div class="form-row">
             <div class="col-md-6">
               <div class="form-group">
-                <input type="text" class="form-control" id="formGroupExampleInput" name="name1" placeholder="ชื่อ" required>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="firstName" placeholder="ชื่อ" required>
                 <div class="invalid-feedback">กรุณาใส่ชื่อ</div>
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" id="formGroupExampleInput" name="name2" placeholder="นามสกุล" required>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="lastName" placeholder="นามสกุล" required>
                 <div class="invalid-feedback">กรุณาใส่นามสกุล</div>
               </div>  
               <div class="form-group">
@@ -136,34 +136,6 @@
             <div class="form-group"><button type="submit" class="btn btn-secondary thai-p" style="float: right;">ส่งการติดต่อ</button></button></div>
           </div>
         </div>
-        <?php
-			if (isset($_POST['email'])) {
-				
-					$subject = $_POST['subject'];
-					$email = $_POST['email'];
-					$message = 'จาก: '.$_POST['name1']." ".$_POST['name2']."\n\n";
-					$message .= 'อีเมลล์: '.$_POST['email']."\n\n";
-					$message .= 'ติดต่อเรื่อง: ' .$_POST['subject']."\n\n";
-					$message .= 'ข้อความ: '."\n\n".$_POST['message']."\n\n";
-					$subject2 = 'อีเมลยืนยันจาก The Worth Hotel';
-					$message2 = 'สวัสดีคุณ ' .$_POST['name1'].','."\n\n";
-					$message2 .= 'นี่เป็นการยืนยันว่าเราได้รับข้อมูลจากคุณแล้ว เราจะตอบกลับคุณเร็ว ๆ นี้'."\n\n";
-					$message2 .= 'หากอีเมลนี้ถูกส่งไปหาคุณไม่ถูกต้องโปรดส่งอีเมลไปที่ info@theworthhotel.com เพื่อแจ้งให้เราทราบ'."\n\n";
-					$message2 .= 'ขอบคุณมาก'."\n\n";
-					$message2 .= '_______________________________________________________________________________________________________'."\n\n";
-					$message2 .= 'ข้อความของคุณ: '."\n\n";
-					$message2 .= 'ติดต่อเรื่อง: '.$_POST['subject']."\n\n";
-					$message2 .= $_POST['message'];
-					$headers = 'From: info@theworthhotel.com';
-					//send mail to webmaster
-					mail('info@theworthhotel.com', $subject, $message, $headers);
-					//send mail to 2nd webmaster
-					mail('theworthhotel@yahoo.com', $subject, $message, $headers);
-					//send confirmation mail to client
-					mail($email, $subject2, $message2, $headers);
-					echo '<script> window.location = "confirmation.html"</script>';
-				}
-			  ?>
       </form><!-- Contact Form -->
 
       <!-- /END Section 2-->
@@ -180,7 +152,7 @@
             <address>
             641 Post St. San Francisco, CA 94109
             </address>
-            <label title="Phone">Phone:</label> <a href="tel:+4157753940">(415) 775 - 3940</a> | <label title="Email">Email: </label><a href="emailto:info@theworthhotel.com"> info@theworthhotel.com</a>
+            <label title="Phone">Phone:</label> <a href="tel:+4157753940">(415) 775 - 3940</a> | <label title="Email">Email: </label><a href="mailto:info@theworthhotel.com"> info@theworthhotel.com</a>
           </div>
           <hr class="footer-divider">
           <div class="footer-columns footer-text">
