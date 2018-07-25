@@ -18,8 +18,8 @@ $senderMessage .= 'This is to confirm that we have received your input. We will 
 $senderMessage .= 'If this email was incorrectly sent to you, please send an email to info@theworthhotel.com to let us know.'."\n\n";
 $senderMessage .= 'Thank you very much!'."\n\n";
 $senderMessage .= '_______________________________________________________________________________________________________'."\n\n";
-$senderMessage .= 'Your message: '."\n\n";
 $senderMessage .= 'Contacting About: '.$_POST['subject']."\n\n";
+$senderMessage .= 'Your message: '."\n\n";
 $senderMessage.= $_POST['message'];
 
 // Email Notification to Webmaster
