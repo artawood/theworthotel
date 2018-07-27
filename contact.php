@@ -29,6 +29,7 @@ $message = 'Hey there!'."\n\n";
 $message .= $_POST['firstName'].' '.$_POST['lastName'].' is interested in '.$_POST['subject']."\n\n";
 $message .= 'The email address is: '.$_POST['email']."\n\n";
 $message .= 'Here is the message from '.$_POST['firstName'];
+$message.= $_POST['message'];
 
 
 // form field names and their translations.
@@ -68,12 +69,18 @@ try
         'Reply-To: ' . $from,
         'Return-Path: ' . $from,
     );
+
+    $headers2 = array('Content-Type: text/plain; charset="UTF-8";',
+        'From: ' . $from,
+        'Reply-To: ' . $sendTo,
+        'Return-Path: ' . $from,
+    );
     
     // Send confirmation email to Sender
     mail($sendTo, $senderSubject, $senderMessage, implode("\n", $headers));
 
     // Send notification email to Webmaster
-    mail($from, $subject, $message, implode("\n", $headers));
+    mail($from, $subject, $message, implode("\n", $headers2));
 
     $responseArray = array('type' => 'success', 'message' => $okMessage);
     // go to confirmation page
