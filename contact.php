@@ -29,6 +29,7 @@ $message = 'Hey there!'."\n\n";
 $message .= $_POST['firstName'].' '.$_POST['lastName'].' is interested in '.$_POST['subject']."\n\n";
 $message .= 'The email address is: '.$_POST['email']."\n\n";
 $message .= 'Here is the message from '.$_POST['firstName'];
+$message.= $_POST['message'];
 
 
 // form field names and their translations.
